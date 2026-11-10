@@ -83,3 +83,21 @@ function validateLogin(username, password, validUsername, validPassword) {
     else if (username === validUsername && password === validPassword) return 'Login Successfull';
     else return 'Login Failed || Invalid UserName & Password';
 }
+
+// Income Tax Calculator
+function calculateIncomeTax(income) {
+    if (income < 0) throw new Error('Income Cannot Be Negative');
+
+    if (income <= 300000)
+        return 0;
+    else if (income <= 700000)
+        return (income - 300000) * 0.05;
+    else if (income <= 1000000)
+        return 20000 + (income - 700000) * 0.10;
+    else if (income <= 1200000)
+        return 50000 + (income - 1000000) * 0.15;
+    else if (income <= 1500000)
+        return 80000 + (income - 1200000) * 0.20;
+    else
+        return 140000 + (income - 1500000) * 0.30;
+}
