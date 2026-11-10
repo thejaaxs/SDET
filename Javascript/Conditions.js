@@ -44,7 +44,7 @@ console.log(getGrade(30));
 
 // 5. Electricity bill calculator (illustrative progressive rates)
 function calculateElectricityBill(units) {
-    if (units < 0) 
+    if (units < 0)
         throw new Error('Units Cannot Be Negative');
     if (units <= 100) return units * 1.5;
     else if (units <= 200) return 100 * 1.5 + (units - 100) * 2.5;
@@ -52,7 +52,7 @@ function calculateElectricityBill(units) {
     else return 100 * 1.5 + 100 * 2.5 + 300 * 4 + (units - 500) * 6;
 }
 console.log(calculateElectricityBill(400));
-console.log(calculateElectricityBill(-100));
+// console.log(calculateElectricityBill(-100));
 
 // 6. Check whether a character is a vowel or consonant
 function checkLetter(character) {
@@ -67,3 +67,19 @@ console.log(checkLetter('a'));
 console.log(checkLetter('f'));
 
 // Loan Eligibility 
+function isElgigibleForLoan(age, monthlyIncome, creditScore) {
+    if (age < 0 || age > 60) return false;
+
+    else if (monthlyIncome < 30000) return false;
+    else if (creditScore < 700) return false;
+    else return true;
+}
+console.log(isElgigibleForLoan(30, 45000, 980));
+console.log(isElgigibleForLoan(70, 5000, 680));
+
+// 10. Login validation by comparing supplied credentials
+function validateLogin(username, password, validUsername, validPassword) {
+    if (username === "" || password === "") return 'Username & Password Cannot Be Empty';
+    else if (username === validUsername && password === validPassword) return 'Login Successfull';
+    else return 'Login Failed || Invalid UserName & Password';
+}
