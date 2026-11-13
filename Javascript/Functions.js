@@ -77,3 +77,13 @@ function calculate(a, operator, b) {
         throw new Error(`Unsupported Operator : ${operator}`);
     }
 }
+console.log(calculate(10, "+", 5));
+console.log(calculate(10, "*", 5));
+
+// Remove duplicate values from an array 
+function removeDuplicates(values) {
+    return [...new Set(values)];
+}
+console.log(removeDuplicates([1,1,1,3,3,3,4,5,6,2]));
+
+// Implement a basic map()
