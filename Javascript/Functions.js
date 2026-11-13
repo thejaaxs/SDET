@@ -61,3 +61,19 @@ function transformValue(value, callBack) {
 }
 console.log(transformValue(5, number => number ** 2));
 
+// Reusable Calculator
+function calculate(a, operator, b) {
+    const operations = {
+        "+": (x, y) => x + y,
+        "-": (x, y) => x - y,
+        "*": (x, y) => x * y,
+        "/": (x, y) => {
+            if (y === 0)
+                throw new Error('Cannot Divide By Zero!');
+            return x / y;
+        }
+    }
+    if (!Object.hasOwn(operations, operator)) {
+        throw new Error(`Unsupported Operator : ${operator}`);
+    }
+}
