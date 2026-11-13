@@ -84,6 +84,32 @@ console.log(calculate(10, "*", 5));
 function removeDuplicates(values) {
     return [...new Set(values)];
 }
-console.log(removeDuplicates([1,1,1,3,3,3,4,5,6,2]));
+console.log(removeDuplicates([1, 1, 1, 3, 3, 3, 4, 5, 6, 2]));
 
 // Implement a basic map()
+function myMap(array, callback, thisArg) {
+    if (!Array.isArray(array) || typeof callback !== 'function')
+        throw new Error('Expected an Array and a callback function');
+
+    const result = new Array(array.length);
+    for (let index = 0; index <= array.length; index++) {
+        if (index in array) {
+            result[index] = callback.call(thisArg, array[index], array, index);
+        }
+    }
+    return result;
+}
+console.log(myMap([1, 2, 3], number => number * 2));
+
+// Implement a basic Filter()
+function myFilter(array, callback, thisArg) {
+    if (!Array.isArray(array) || typeof callback !== 'function')
+        throw new Error('Expected an Array & Callback function');
+    const result = [];
+    for (let index = 0; index < array.length; index++) {
+        if (index in array && callback.call(thisArg, array[index], array, index))
+            result.push(array[index]);
+    }
+    return result;
+}
+console.log(myFilter([1, 2, 3, 4, 5, 6], number => number % 2 === 0))
