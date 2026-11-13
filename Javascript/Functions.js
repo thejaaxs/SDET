@@ -39,4 +39,25 @@ console.log(squareExpression(4));
 function sumAll(...numbers) {
     return numbers.reduce((total, number) => total + number, 0);
 }
-console.log(sumAll(1,2,3,4,5));
+console.log(sumAll(1, 2, 3, 4, 5));
+
+// Return another function
+function createMultiplier(multiplier) {
+    return function (number) {
+        return number * multiplier;
+    }
+}
+const double = createMultiplier(5);
+// here the inner function will be assigned to double
+console.log(double(2));
+const triple = createMultiplier(10);
+console.log(triple(3));
+
+// Accept another function as an argumemt 
+function transformValue(value, callBack) {
+    if (typeof callBack !== 'function')
+        throw new Error('Callback must be a function');
+    return callBack(value);
+}
+console.log(transformValue(5, number => number ** 2));
+
