@@ -39,4 +39,19 @@ function removeElement(nums, val) {
     }
     return write;
 }
-console.log(removeElement([1,2,3,4,5,1,2,3,4,5],5));
+console.log(removeElement([1, 2, 3, 4, 5, 1, 2, 3, 4, 5], 5));
+
+// Insert the element !
+function searchInsert(nums, target) {
+    let left = 0;
+    let right = nums.length;
+    while (left < right) {
+        const mid = Math.floor((left + right) / 2);
+        if (nums[mid] < target) {
+            left = mid + 1;
+        } else {
+            right = mid;
+        }
+    }
+    return left;
+}
