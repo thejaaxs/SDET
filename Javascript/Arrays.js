@@ -25,5 +25,18 @@ function removeDuplicates(nums) {
     }
     return write;
 }
-console.log(removeDuplicates([1,1,2]));
-console.log(removeDuplicates([0,0,1,1,1,2,2,3,3,4]));
+console.log(removeDuplicates([1, 1, 2]));
+console.log(removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]));
+
+// Return the count of the values not equal to val ;
+function removeElement(nums, val) {
+    let write = 0;
+    for (let num of nums) {
+        if (num !== val) {
+            nums[write] = num;
+            write++;
+        }
+    }
+    return write;
+}
+console.log(removeElement([1,2,3,4,5,1,2,3,4,5],5));
