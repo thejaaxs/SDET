@@ -55,3 +55,10 @@ function searchInsert(nums, target) {
     }
     return left;
 }
+
+// Maximum Sub-Array !
+function maxSubArray(nums) {
+    let current = nums[0];
+    let best = nums[0];
+    
+}  
