@@ -60,5 +60,6 @@ function searchInsert(nums, target) {
 function maxSubArray(nums) {
     let current = nums[0];
     let best = nums[0];
+
     
 }  
